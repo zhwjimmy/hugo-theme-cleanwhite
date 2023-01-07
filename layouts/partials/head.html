@@ -6,7 +6,9 @@
     <!-- start ogp -->
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <meta property="og:type" content="article">
-
+    <meta name="title" content="{{ .Params.title }}" />
+    <meta name="description" content="{{ .Params.description }}">
+<!-- 
     {{ if .Params.thumbnail }}
     <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
     <meta property="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
@@ -40,9 +42,9 @@
     {{ else }}
     <meta property="twitter:card" content="summary" />
     {{ end }}
-    <!-- end ogp -->
-
-    <meta name="keyword"  content="{{ .Site.Params.keyword }}">
+    end ogp -->
+<!--  -->
+    <!-- <meta name="keyword"  content="{{ .Site.Params.keyword }}"> -->
     <link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}">
 
     <title>{{ if eq .Title "松溪夜谈" }}{{ .Title }}{{ else if .Title}}{{ .Title }} | {{ .Site.Params.SEOTitle }}{{ else }}{{ .Site.Params.SEOTitle }}{{ end }}</title>
@@ -72,21 +74,16 @@
 
     <!-- jQuery -->
     <script src="{{ "js/jquery.min.js" | relURL }}"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
-
     <!-- Hux Theme JavaScript -->
     <script src="{{ "js/hux-blog.min.js" | relURL }}"></script>
-
     <!-- lazy load image JavaScript -->
     <script src="{{ "js/lazysizes.min.js" | relURL }}"></script>
-
     <!-- Custom JS -->
     {{ range .Site.Params.custom_js }}
     <script src="{{ . | absURL }}"></script>
     {{ end }}
-
 </head>
 
 {{ if .Site.GoogleAnalytics }}

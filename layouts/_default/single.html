@@ -79,6 +79,9 @@
                 {{ end }}
                 -->
                     {{ .Content }}
+                    <blockquote>
+                        <p>原文地址：<a href="{{ path.Join .File.Dir .File.ContentBaseName | absURL }}">{{.Params.Title}}</a></p>
+                    </blockquote>
 
                     {{ if .Site.Params.reward }}
                     {{ partial "reward.html" . }}
